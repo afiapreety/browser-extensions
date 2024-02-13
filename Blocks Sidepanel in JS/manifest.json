@@ -1,0 +1,27 @@
+{
+    "name": "Blocks Side Panel",
+    "version": "0.1",
+    "manifest_version": 3,
+    "description": "Provides translation in the side panel.",
+    "background": {
+      "service_worker": "service-worker.js"
+    },
+    "side_panel": {
+      "default_path": "sidepanel.html"
+    },
+    "permissions": [
+      "sidePanel", 
+      "contextMenus"
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["content.css"]
+      }
+    ]
+  }

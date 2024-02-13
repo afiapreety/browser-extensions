@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+      }
+
+      table {
+          border-collapse: collapse;
+          width: 100%; 
+          /* max-width: 500px; */
+          margin-bottom: 20px;
+      }
+
+      textarea {
+            /* border: none; */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%; 
+            resize: none;
+      }
+
+       th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+      }
+
+      td {
+        max-height: 100px; 
+        overflow: auto;
+      }
+
+      .chip-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+      }
+
+      .chip {
+            display: inline-block;
+            background-color: #f2f2f2;
+            color: #333;
+            border-radius: 15px;
+            padding: 5px 10px;
+            margin: 5px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+      .chip:hover {
+            background-color: #e0e0e0;
+      }
+
+      .button-container {
+            text-align: right; 
+            margin-top: 10px;
+      }
+
+      button {
+          padding: 10px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+
+      #suggest-button {
+        color: #2e85e8;
+        background-color: #dde4ec;
+      }
+      #suggest-button:hover  {
+        background-color: lightgray;
+      }
+
+      #save-button {
+        background-color: #2e85e8;
+        color: white;
+      }
+      #save-button:hover  {
+        background-color: #4793e5;
+      }
+
+      .row-actions {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .row-actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 2px;
+            padding-top: 0;
+        }
+
+        .tick-icon {
+            color: green;
+        }
+
+        .cross-icon {
+            color: red;
+        }
+  </style>
+    <title>Blocks Side Panel</title>
+  </head>
+  <body>
+    <h2>&lt;blocks/&gt; Language Manager</h2>
+    <hr />
+    <div id="key-suggestions">
+      <h3>Key Suggestions</h3>
+      <p id="select-a-word">Select words to see key suggestions.</p>
+      <div id="chipContainer" class="chip-container"></div>
+    </div>
+
+    <div id="excat-match">
+      <p><span style="font-weight: bold;">Exact Matched Key: </span>APP_KEY_SOMETHING</p>
+
+      <table>
+        <tr>
+            <th>English</th>
+            <td><textarea id="selectedText" rows="2" cols="20">Select preferred word(s)</textarea></td>
+        </tr>
+        <tr>
+            <th>German</th>
+            <td>
+              <textarea id="definition-text-de" rows="2" cols="20">Translation</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>Bangla</th>
+            <td><textarea id="definition-text-bn" rows="2" cols="20">Translation</textarea></td>
+        </tr>
+      </table>
+
+      <div class="button-container">
+        <button id="suggest-button">Suggest</button>
+        <button id="save-button">Save</button>
+      </div>
+    </div>
+
+
+  <script src="sidepanel.js"></script>
+
+  </body>
+</html>
